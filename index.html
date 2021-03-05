@@ -24,24 +24,54 @@
         ma per i multipli di 3 stampi "Fizz" al posto del numero e per i multipli di 5 stampi Buzz.
         Per i numeri che sono sia multipli di 3 che di 5 stampi FizzBuzz.*/
 
-      for (let i = 1; i < 101; i++) {
 
-        if (i % 3 == 0 && i % 5 !== 0) {
-          console.log(`Fizz`);
+        for (let i = 1; i < 101; i++) {
+
+          if (i % 3 == 0 && i % 5 !== 0) {
+            console.log(`Fizz`);
+          }
+
+          else if(i % 5 === 0 && i % 3 !== 0) {
+            console.log(`Buzz`)
+          }
+
+          else if (i % 5 === 0 && i % 3 === 0)
+          console.log(`FizzBuzz`)
+
+          else {
+            console.log(i);
+          }
+
         }
 
-        else if(i % 5 === 0 && i % 3 !== 0) {
-          console.log(`Buzz`)
+
+        /*Eccovi un piccolo rompicapo
+        Per 5 giocatori lanciare un dado, salvare i risultati in un array.
+        Vince il giocatore che ha il numero più alto.
+        Quindi stampare chi è il vincitore e con quale numero.*/
+        
+
+        var array = [];
+        var maxNumber = 0;
+        var giocatore = 0;
+
+        for (let i = 0; i <= 4; i++) {
+          var casualNumber = Math.floor(Math.random() * (100 - 1) + 1);
+          array.push(casualNumber);
         }
 
-        else if (i % 5 === 0 && i % 3 === 0)
-        console.log(`FizzBuzz`)
+        console.log(array);
 
-        else {
-          console.log(i);
+        for (let j = 0; j < array.length; j++) {
+          if(maxNumber <= array[j]) {
+            maxNumber = array[j] ;
+            giocatore = "il vincitore è il giocatore " + (j+1) + " con " + maxNumber;
+          }
         }
 
-      }
+        console.log(giocatore);
+
+
 
 
     </script>
